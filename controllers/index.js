@@ -1,0 +1,13 @@
+exports.Login = require("./login")
+exports.Userlogin = require("./userLogin")
+exports.Logout = require("./logout")
+exports.AddUser = require("./AddUser")
+exports.Departments = require("./Departments")
+exports.DeleteUsers = require("./DeleteUsers")
+exports.EditUser = require("./EditUser")
+exports.EditAdmin = require("./EditAdmin")
+exports.authUser = require("./authUser")
+exports.SendEmail = require("./SendEmail")
+exports.SaveProfile = require("./SaveProfile")
+
+exports.AvailableCourses = require("./courses/AvailableCourses")
