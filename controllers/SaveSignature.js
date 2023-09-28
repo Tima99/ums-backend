@@ -3,7 +3,6 @@ const { query } = require("../db")
 async function SaveSignature(req, res){
     try {
         const {signature, title} = req.body
-        console.log(req.body)
         
         const admin = req.email
 

@@ -22,7 +22,7 @@ const Login = async (req, res) => {
     try {
         const { email, password } = req.body
 
-        if (notValidPassword(password)) return res.status(422).json({ message: "Password is not valid" })
+        if (notValidPassword(password)) return res.status(422).json({ message: "Password min. length is 8 and al least 2 digits and lowercase" })
 
         const userRow = await query(`select * from Admin where email = "${email}"`)
 
@@ -30,6 +30,7 @@ const Login = async (req, res) => {
 
         if(userRow[0].password !== password) return res.status(422).send({ message : "Password wrong"})
 
+        console.log({email, password})
         
         SaveJwt({ email , admin: true}, res)
 

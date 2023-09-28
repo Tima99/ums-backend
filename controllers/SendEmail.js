@@ -4,7 +4,7 @@ async function SendEmail(req, res){
     try {
         const details = req.body
 
-        const sent = await Send_Email(details)
+        const sent = await Send_Email({...details, from : req.email})
 
         // console.log(sent)
 

@@ -1,11 +1,14 @@
 const jwt = require("jsonwebtoken")
+const {
+    JWT_SECRET_KEY
+} = require("../config")
 
 async function authentication(req, res, next){
     try {
         const cookies = req.cookies
         if(!cookies.jwt) throw Error("Invalid JWT")
         
-        const payload = jwt.verify(cookies.jwt, "AMITSECRETISMINE")
+        const payload = jwt.verify(cookies.jwt, JWT_SECRET_KEY)
 
         if(!payload) throw Error("unauthentic")
 

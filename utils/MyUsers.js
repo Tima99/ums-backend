@@ -8,7 +8,7 @@ async function MyUsers(admin) {
             (SELECT courses.name from courses WHERE courses.id = users_courses.id)
         ) as course
         FROM users 
-        INNER JOIN departments ON users.ID  = departments.ID and users.admin='${admin}'
+        INNER JOIN departments ON users.departmentId  = departments.ID and users.admin='${admin}'
         LEFT JOIN genders ON USERS.GENDERID = genders.ID
         LEFT JOIN users_courses on users_courses.user = users.email 
         GROUP By users.email;

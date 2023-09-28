@@ -18,7 +18,7 @@ function query($query) {
         });
     });
 }
-const Users = "Users";
+const Users = "users";
 exports.Users = Users;
 
 async function createDatabase(dbname) {
