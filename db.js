@@ -8,6 +8,7 @@ const con = mysql.createPool({
     user: DB_USER_NAME,
     password: DB_PASSWORD,
     database: DB_DATABASE_NAME,
+    port: DB_PORT || 3306
 });
 
 function query($query) {
