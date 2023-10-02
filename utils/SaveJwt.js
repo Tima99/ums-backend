@@ -11,9 +11,9 @@ const SaveJwt = (payload, res) => {
     })
     
     res.cookie('jwt', token, {
-        httpOnly: false,
-        sameSite: 'None',
-        secure: false,
+        sameSite:"none",
+        httpOnly: "true",
+        secure: "true"
         maxAge: msIn7Days
     })
 
