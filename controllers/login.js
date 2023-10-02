@@ -24,7 +24,7 @@ const Login = async (req, res) => {
 
         if (notValidPassword(password)) return res.status(422).json({ message: "Password min. length is 8 and al least 2 digits and lowercase" })
 
-        const userRow = await query(`select * from Admin where email = "${email}"`)
+        const userRow = await query(`select * from admin where email = "${email}"`)
 
         if(userRow.length <= 0) return res.status(422).send({ message : "No Admin Exists"})
 
