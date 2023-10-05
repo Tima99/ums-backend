@@ -5,8 +5,10 @@ async function authUser(req, res){
         const email = req.email
         // const adminEmail = req.adminEmail
 
+        console.log({email: email})
+
         const usersRow = await query(`SELECT users.email, users.avatar, users.phone, users.password, departments.name AS department, users.admin FROM users INNER JOIN departments WHERE users.departmentId = departments.id and users.email = "${email}"  ;`)
-        
+        console.log({usersRow})
         res.json(usersRow[0])
     } catch (error) {
         console.log(error)
