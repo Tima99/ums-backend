@@ -21,7 +21,7 @@ async function AddUser(req, res) {
     try {
         const { email, phone, password, department, gender } = req.body
         let date = new Date()
-        date = date.toLocaleString();
+        date = date.toISOString().slice(0, 19).replace('T', ' ');
         // console.log(req.body)
 
         if(notValidPassword(password)) return res.status(422).json({message: 'Password length atleast 6 and must have a-z, 0-9, no spaces'})
