@@ -26,7 +26,7 @@ async function AddUser(req, res) {
 
         const departmentid = await query(`select id from departments where name="${department}"`)
 
-        await query(`insert into ${Users} (email, phone, password, departmentId, admin ${gender != null ? ', genderId' : ''}) values("${email}", "${phone}", "${password}","${departmentid[0].id}","${req.email}" ${gender != null ? `, ${gender}` : ''})`)
+        await query(`insert into ${Users} (email, phone, password, departmentId, admin, ts ${gender != null ? ', genderId' : ''}) values("${email}", "${phone}", "${password}","${departmentid[0].id}","${req.email}", "${Date.now()}" ${gender != null ? `, ${gender}` : ''})`)
         
         // const users  = await query(`SELECT USERS.email, users.phone, USERS.password,USERS.genderId, genders.gender AS gender, departments.name AS department, users.ts FROM users INNER JOIN departments on users.ID = departments.ID and users.admin="${req.email}" LEFT JOIN genders ON USERS.GENDERID = genders.ID;`)
 
