@@ -25,9 +25,8 @@ const Userlogin = async (req, res) => {
         // console.log(req.body);
         // if (notValidPassword(password)) return res.status(422).json({ message: "Password is not valid" })
 
-        const userRow = await query(`select * from Users where email="${email}" `)
+        const userRow = await query(`select * from users where email="${email}" `)
 
-        console.log(userRow)
         
         if(userRow.length <= 0) return res.status(422).send({ message : "No User Exists"})
 
