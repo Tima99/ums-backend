@@ -3,7 +3,7 @@ const mysql = require("mysql");
 const { DB_HOST_NAME, DB_USER_NAME, DB_PASSWORD, DB_DATABASE_NAME , DB_PORT } = require("./config");
 
 const con = mysql.createPool({
-    connectionLimit: 100,
+    connectionLimit: 10000,
     host: DB_HOST_NAME,
     user: DB_USER_NAME,
     password: DB_PASSWORD,
